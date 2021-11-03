@@ -1,31 +1,15 @@
 package com.globallogic.global_logic_test.network.response;
 
+import com.globallogic.global_logic_test.model.Data;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class DataResponse {
-    private String title;
-    private String description;
-    private String image;
+    @SerializedName("data")
+    private ArrayList<Data> data;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public ArrayList<Data> getDataArrayList() {
+        return data;
     }
 }

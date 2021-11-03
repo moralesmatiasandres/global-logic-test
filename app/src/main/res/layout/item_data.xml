@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.globallogic.global_logic_test.model.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_20"
+        app:cardCornerRadius="@dimen/size_10"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageViewConnectionLogo"
+                android:layout_width="@dimen/size_60"
+                android:layout_height="@dimen/size_60"
+                android:layout_marginStart="@dimen/size_20"
+                android:layout_marginVertical="@dimen/size_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+            <TextView
+                android:id="@+id/textViewConnectionName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageViewConnectionLogo"
+                app:layout_constraintBottom_toTopOf="@id/textViewConnectionBusiness"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="HotPoint"
+                android:text="@{data.title}"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginEnd="@dimen/size_5"/>
+
+            <TextView
+                android:id="@+id/textViewConnectionBusiness"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewConnectionLogo"
+                app:layout_constraintStart_toEndOf="@id/imageViewConnectionLogo"
+                app:layout_constraintTop_toBottomOf="@id/textViewConnectionName"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginEnd="@dimen/size_5"
+                android:text="@{data.description}"
+                tools:text="Retail Store"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
