@@ -10,6 +10,10 @@ public class DataViewModel extends BaseViewModel {
     private SingleLiveEvent<DataRepository.OnDataSuccess> onDataSuccessSingleLiveEvent = new SingleLiveEvent<>();
     private SingleLiveEvent<ErrorResponse> onDataFailSingleLiveEvent = new SingleLiveEvent<>();
 
+    public void fetchData() {
+        getDataRepository().fetchData();
+    }
+
     private DataRepository getDataRepository() {
         if (dataRepository == null) {
             dataRepository = new DataRepository();
